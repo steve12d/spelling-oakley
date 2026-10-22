@@ -1,23 +1,20 @@
 const all_words = {
-    "202548": ["curl", "hurt", "burst", "Thursday", "some"],
-    "202542": ["wait", "train", "paint", "snail", "one"]
+    "202642": ["lie", "fried", "flies", "cried", "lightning", "fright", "midnight", "want", "some", "come"]
 }
 
 const all_phrases = {
-    "202548": [
-        "I like to curl my hair with a hair curler.",
-        "Ouch! That scrape on my knee hurt.",
-        "The balloon burst when I sat on it.",
-        "We have pizza every Thursday for dinner.",
-        "I want some ice cream for dessert." 
-    ],
-    "202542":[
-        "I have to wait for my mom to finish shopping.",
-        "I love watching the train pass by.",
-        "I like to paint pictures with lots of colors.",
-        "The snail slowly crawled across the sidewalk.",
-        "I have one cookie left to eat."
-        ]
+    "202642": [
+        "My dog likes to lie in the warm sun.",
+        "We had fried eggs for breakfast.",
+        "The seagull flies high above the beach.",
+        "The baby cried until she got her bottle.",
+        "We saw lightning flash across the dark sky.",
+        "The loud bang gave me a fright!",
+        "The clock strikes twelve at midnight.",
+        "Do you want to play football with me?",
+        "Can I have some juice, please?",
+        "Please come to my birthday party!"
+    ]
 }
 
 const correct_images = [
@@ -34,7 +31,7 @@ function getLatestWeek() {
 }
 
 function getWeekNumberFromUrl() {
-    // Assuming the URL is something like "http://spellingbury.netapp.com/?week=202341"
+    // Assuming the URL is something like "http://spelling-oakley.netlify.app/?week=202642"
   
     // Use window.location.search to get the query string from the current page URL
     const queryString = window.location.search;
@@ -156,7 +153,7 @@ function displayNext() {
     document.getElementById("userInput").value="";
     displayCard();
     peekAtCard(2000);
-    speakWord("en-US");
+    speakWord("en-GB");
 }
 
 function displayWordList() {
@@ -250,7 +247,7 @@ function highlightCorrectness() {
     }
 }
 
-function speakWord(lang = "en-US") {
+function speakWord(lang = "en-GB") {
     if ('speechSynthesis' in window) {
         let utterance_word = new SpeechSynthesisUtterance(currentQuizWord);
         let utterance_phrase = new SpeechSynthesisUtterance(phrases[currentWordIndex]);

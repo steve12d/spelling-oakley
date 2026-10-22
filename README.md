@@ -1,6 +1,7 @@
-# Spelling Bee Learning Game
+# Spelling Bee — Oakley College
 
-...
+Fork of [spelling-bee](https://github.com/steve12d/spelling-bee) with the Oakley College (Gran Canaria) spelling lists. Add each new list to `all_words` / `all_phrases` in `spelling.js`, keyed by ISO year+week (e.g. `202642`). The latest week loads by default; older weeks via `?week=YYYYWW`.
+
 
 ## Spelling Bee Admin Tool
 

@@ -3,25 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spelling Bee</title>
-    <link rel="stylesheet" href="assets/styles.css">
+    <title>Spidey Spelling</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles.css?v2">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Makes the site responsive -->
-    <meta name="description" content="A fun spelling game for Oakley College kids! Test your spelling skills with our interactive flashcards.">
+    <meta name="description" content="A web-slinging spelling game for Oakley College kids! Test your spelling skills with our interactive flashcards.">
 
-    <meta property="og:title" content="Spelling Flashcard Game for Oakley College Kids">
-    <meta property="og:description" content="A fun spelling game for Oakley College kids! Test and improve your spelling skills with our interactive flashcards.">
-    <meta property="og:image" content="https://spelling-oakley.netlify.app/assets/bee200.png">
+    <meta property="og:title" content="Spidey Spelling for Oakley College Kids">
+    <meta property="og:description" content="A web-slinging spelling game for Oakley College kids! Test and improve your spelling skills with our interactive flashcards.">
+    <meta property="og:image" content="https://spelling-oakley.netlify.app/assets/android-chrome-512x512.png">
     <meta property="og:url" content="https://spelling-oakley.netlify.app/">
     <meta property="og:type" content="website">
 
     <meta name="twitter:card" content="summary"> <!-- 'summary' for smaller image card -->
-    <meta name="twitter:title" content="Spelling Flashcard Game for Oakley College Kids">
-    <meta name="twitter:description" content="A fun spelling game for Oakley College kids! Test and improve your spelling skills with our interactive flashcards.">
-    <meta name="twitter:image" content="https://spelling-oakley.netlify.app/assets/bee200.png">
+    <meta name="twitter:title" content="Spidey Spelling for Oakley College Kids">
+    <meta name="twitter:description" content="A web-slinging spelling game for Oakley College kids! Test and improve your spelling skills with our interactive flashcards.">
+    <meta name="twitter:image" content="https://spelling-oakley.netlify.app/assets/android-chrome-512x512.png">
 
     <!-- Standard favicon -->
-    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/assets/spider.svg" type="image/svg+xml">
     
     <!-- PNG icons for different sizes -->
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
@@ -36,8 +38,8 @@
 </head>
 <body onkeydown="event.preventDefault()">
     <div id="header">
-        <img id="header-image" src="assets/bee200.png" width="40" height="40"/>
-        <h2>Spelling Bee</h2>
+        <img id="header-image" src="assets/spider.svg" width="56" height="56" alt=""/>
+        <h2>Spidey Spelling</h2>
     </div>
     
     <div id="dashboard" class="dashboard">
@@ -52,7 +54,7 @@
                 <div class="card-inner">
                     <div class="card-front">
                         <p>Reveal the word!</p>
-                        <img src="assets/dancing-t-rex.gif" id="answer-correct-img" alt="Correct Answer Image" style="display: none;">
+                        <img src="assets/spider-swing.svg" id="answer-correct-img" alt="Correct Answer Image" style="display: none;">
                     </div>
                     <div class="card-back">
                         <p id="cardWord"></p>
@@ -75,6 +77,7 @@
         </div>
         <div style="flex-grow:3">
             <p><button class="listen" onclick="savePreferences('random')">Random</button></p>
+            <p><button class="listen" onclick="savePreferences('assets/spider-swing.svg')">Spidey</button></p>
             <p><button class="listen" onclick="savePreferences('assets/dancing-t-rex.gif')">Dancing T-Rex</button></p>
             <p><button class="listen" onclick="savePreferences('assets/velociraptors.gif')">Velociraptors</button></p>
             <p><button class="listen" onclick="savePreferences('assets/peppa-george2.gif')">Peppa &amp; George</button></p>

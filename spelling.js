@@ -18,10 +18,7 @@ const all_phrases = {
 }
 
 const correct_images = [
-    'assets/dancing-t-rex.gif',
-    'assets/velociraptors.gif',
-    'assets/peppa-george2.gif',
-    'assets/pikachu-dance.gif'
+    'assets/spider-swing.svg'
 ]
 
 function getLatestWeek() {
@@ -205,7 +202,8 @@ function checkAnswer() {
             particleCount: 100,
             spread: 70,
             startVelocity: 40,
-            ticks: 200
+            ticks: 200,
+            colors: ['#e0262b', '#1d3fbf', '#ffffff']
         });
         
         setTimeout(displayNext, 3000); // Show new animal after 3 seconds to let the user enjoy the celebration.

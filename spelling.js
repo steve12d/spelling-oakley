@@ -1,8 +1,21 @@
 const all_words = {
+    "202643": ["seals", "eat", "seaweed", "leaf", "treat", "queen", "weekend", "come", "there", "Mr"],
     "202642": ["lie", "fried", "flies", "cried", "lightning", "fright", "midnight", "want", "some", "come"]
 }
 
 const all_phrases = {
+    "202643": [
+        "The seals splashed and played in the sea.",
+        "I like to eat toast with jam.",
+        "We found slimy green seaweed on the beach.",
+        "A red leaf fell from the tree.",
+        "My dog does a trick to get a treat.",
+        "The queen wore a sparkly crown.",
+        "We go to the beach at the weekend.",
+        "Can you come and play with me?",
+        "Look over there, it's a rainbow!",
+        "Mr Smith is our new teacher."
+    ],
     "202642": [
         "My dog likes to lie in the warm sun.",
         "We had fried eggs for breakfast.",

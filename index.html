@@ -6,7 +6,7 @@
     <title>Spidey Spelling</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/styles.css?v2">
+    <link rel="stylesheet" href="assets/styles.css?v3">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Makes the site responsive -->
     <meta name="description" content="A web-slinging spelling game for Oakley College kids! Test your spelling skills with our interactive flashcards.">
@@ -63,8 +63,7 @@
             </div>
             <br/>
             
-            <button class="listen" onclick="speakWord('en-GB')" title="Listen to the word">&#x1F50A; Listen</button>
-            <!-- <button class="listen" onclick="speakWord('en-GB')" title="Listen to the word">&#x1F50A; 🇬🇧</button> -->    
+            <button class="listen" onclick="speakWord()" title="Listen to the word">&#x1F50A; Listen <span id="accentLabel" class="accent"></span></button>
         </div>
         <!-- <div>
             <button class="toggleButton" onclick="toggleSettings()">
@@ -94,7 +93,7 @@
     <p id="feedback"></p>
     <div id="virtualKeyboard"></div>
 
-    <script src="spelling.js?w202642"></script>
+    <script src="spelling.js?w202642b"></script>
     <script src="confetti.js"></script>
 </body>
 </html>

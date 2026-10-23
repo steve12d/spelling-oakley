@@ -135,6 +135,8 @@ function displayCard() {
     if (currentWordIndex >= quizwords.length) {
         currentWordIndex = 0;  // Reset if we've gone through all the quizwords
     }
+
+    pickAccent();
     
     currentQuizWord = quizwords[currentWordIndex];
     let wordDisplay = document.getElementById("cardWord");
@@ -150,7 +152,7 @@ function displayNext() {
     document.getElementById("userInput").value="";
     displayCard();
     peekAtCard(2000);
-    speakWord("en-GB");
+    speakWord();
 }
 
 function displayWordList() {
@@ -245,18 +247,50 @@ function highlightCorrectness() {
     }
 }
 
-function speakWord(lang = "en-GB") {
+// US half of the time, UK and Irish a quarter each. Chosen once per word so
+// pressing Listen again repeats the same accent.
+const accents = ['en-US', 'en-US', 'en-GB', 'en-IE'];
+const accentLabels = {'en-US': 'US', 'en-GB': 'UK', 'en-IE': 'Irish'};
+let currentAccent = 'en-US';
+
+function pickAccent() {
+    currentAccent = accents[randbetween(0, accents.length - 1)];
+    let label = document.getElementById("accentLabel");
+    if (label) label.textContent = accentLabels[currentAccent];
+}
+
+function findVoice(lang) {
+    // Android reports e.g. "en_GB" rather than "en-GB"
+    let voices = window.speechSynthesis.getVoices();
+    let matches = voices.filter(v => v.lang.replace('_', '-') === lang);
+    // Prefer the higher-quality online voices (e.g. "Google UK English Female")
+    let voice = matches.find(v => !v.localService) || matches[0];
+    if (!voice && lang === 'en-IE') return findVoice('en-GB'); // Many devices have no Irish voice
+    return voice || null;
+}
+
+function speakWord(lang = currentAccent) {
     if ('speechSynthesis' in window) {
+        let voice = findVoice(lang);
         let utterance_word = new SpeechSynthesisUtterance(currentQuizWord);
         let utterance_phrase = new SpeechSynthesisUtterance(phrases[currentWordIndex]);
-        utterance_word.lang = lang;
-        utterance_phrase.lang = lang;
+        for (let utterance of [utterance_word, utterance_phrase]) {
+            utterance.lang = lang;
+            if (voice) utterance.voice = voice;
+        }
+        // Show the accent actually spoken (e.g. UK when no Irish voice exists)
+        let spoken = voice ? voice.lang.replace('_', '-') : lang;
+        let label = document.getElementById("accentLabel");
+        if (label && accentLabels[spoken]) label.textContent = accentLabels[spoken];
         window.speechSynthesis.speak(utterance_word);
         setTimeout(()=>window.speechSynthesis.speak(utterance_phrase),1000);
     } else {
         alert("Your browser does not support speech synthesis. Try using a modern browser like Chrome or Firefox.");
     }
 }
+
+// Voices load asynchronously in Chrome; touching the list starts the load
+if ('speechSynthesis' in window) window.speechSynthesis.getVoices();
 
 function applyBackspace() {
     let userInput = document.getElementById("userInput");

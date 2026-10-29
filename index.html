@@ -6,7 +6,7 @@
     <title>Spidey Spelling</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/styles.css?v3">
+    <link rel="stylesheet" href="assets/styles.css?v4">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Makes the site responsive -->
     <meta name="description" content="A web-slinging spelling game for Oakley College kids! Test your spelling skills with our interactive flashcards.">
@@ -50,7 +50,7 @@
         <div class="dashcards" style="flex-grow:3">
             <!-- <p>Current Word: <span id="currentWordNumber">1</span> of <span id="totalWords"></span></p> -->
 
-            <div class="flashcard">
+            <div class="flashcard" onclick="toggleCard()" role="button" aria-label="Reveal the word">
                 <div class="card-inner">
                     <div class="card-front">
                         <p>Reveal the word!</p>
@@ -93,7 +93,7 @@
     <p id="feedback"></p>
     <div id="virtualKeyboard"></div>
 
-    <script src="spelling.js?w202643"></script>
+    <script src="spelling.js?w202643b"></script>
     <script src="confetti.js"></script>
 </body>
 </html>

@@ -188,9 +188,24 @@ button.listen:active {
     transition: transform 0.5s;
 }
 
-.flashcard:hover .card-inner {
+/* Tapping toggles .flipped (touch screens such as iPhone Safari don't hover);
+   hover only flips on devices with a real mouse. */
+.flashcard {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.flashcard.flipped .card-inner {
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
+}
+
+@media (hover: hover) {
+    .flashcard:hover .card-inner {
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+    }
 }
 
 .card-front, .card-back {

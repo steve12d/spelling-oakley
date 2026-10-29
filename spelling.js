@@ -160,9 +160,18 @@ function displayCard() {
     displayWordList();
 }
 
+function toggleCard() {
+    document.querySelector('.flashcard').classList.toggle('flipped');
+}
+
+function hideCard() {
+    document.querySelector('.flashcard').classList.remove('flipped');
+}
+
 function displayNext() {
     currentWordIndex+=1;
     document.getElementById("userInput").value="";
+    hideCard();
     displayCard();
     peekAtCard(2000);
     speakWord();
@@ -204,7 +213,9 @@ function checkAnswer() {
         let audio = new Audio('assets/trumpet.mp3');
         audio.play();
         
-        // Show the chosen image
+        // Show the chosen image. It sits on the card front, so turn the card
+        // back over in case it was tapped open.
+        hideCard();
         document.getElementById('answer-correct-img').style.display = 'block';
         
         // Hide the image after a short while (e.g., 3 seconds)

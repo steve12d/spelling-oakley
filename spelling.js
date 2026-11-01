@@ -1,9 +1,22 @@
 const all_words = {
+    "202644": ["cake", "name", "grape", "ape", "ate", "tail", "paint", "tray", "they", "here"],
     "202643": ["seals", "eat", "seaweed", "leaf", "treat", "queen", "weekend", "come", "there", "Mr"],
     "202642": ["lie", "fried", "flies", "cried", "lightning", "fright", "midnight", "want", "some", "come"]
 }
 
 const all_phrases = {
+    "202644": [
+        "We had chocolate cake for my birthday.",
+        "Please write your name at the top.",
+        "I picked a sweet green grape from the bunch.",
+        "The ape swung from tree to tree.",
+        "I ate all my dinner.",
+        "The dog wagged its tail.",
+        "We used red paint to make a picture.",
+        "Mum carried the cups on a tray.",
+        "They went to the park after school.",
+        "Come and sit here next to me."
+    ],
     "202643": [
         "The seals splashed and played in the sea.",
         "I like to eat toast with jam.",
